@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : Eleccion
+    Created on : 17-nov-2016, 17:35:52
+    Author     : Zack
+-->
+<jsp:root   xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" version="1.2">
+    <jsp:directive.page contentType="text/html; charset=UTF-8" />
+    <jsp:directive.page isELIgnored="false" />
+    <jsp:output omit-xml-declaration="false"
+                doctype-root-element="html"
+                doctype-public="-//W3C//DTD XHTML 1.1//EN"
+                doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd" />
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+    </jsp:element>
+
+    <jsp:useBean id="op" class="es.albarregas.Beans.EleccionBean"></jsp:useBean>
+    <jsp:setProperty property="*" name="op"/>
+    <c:set var="opc" value="${op.seleccion}" />
+    <c:if test="${opc=='1'}" >
+        <c:redirect url="../Vistas/edificio.jspx"/>
+    </c:if>
+    <c:if test="${opc=='2'}" >
+        <c:redirect url="../Vistas/contenido.jspx"/>
+    </c:if>
+    <c:if test="${opc==null}" >
+        <c:redirect url="../../index.jspx"/>
+    </c:if>
+    
+</jsp:root>

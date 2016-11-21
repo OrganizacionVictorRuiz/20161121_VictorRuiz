@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : contenido
+    Created on : 18-nov-2016, 15:39:03
+    Author     : Zack
+-->
+<jsp:root   xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" version="1.2">
+    <jsp:directive.page contentType="text/html; charset=UTF-8" />
+    <jsp:directive.page isELIgnored="false" />
+    <jsp:output omit-xml-declaration="false"
+                doctype-root-element="html"
+                doctype-public="-//W3C//DTD XHTML 1.1//EN"
+                doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd" />
+
+
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+    </jsp:element>
+    <title>Formulario: Seguro de contenido</title>
+    <link href="../../CSS/css.css" rel="stylesheet" type="text/css"/>
+    <jsp:body>
+    <img src="../../IMG/logo.png" alt=""/>
+    <fieldset>
+    <form method="post" action="verCuota.jspx">
+        Cubrir daños accidentales: 
+        <input type="checkbox" name="cubrir" checked=""/><br/><br/>
+        Cantidad que requiere asegurar:
+        <select name="asegurar" >
+            <option value="10000">10.000</option>
+            <option value="20000">20.000</option>
+            <option value="30000">30.000</option>
+            <option value="50000">50.000</option>
+            <option value="100000">100.000</option>
+        </select><br/><br/>
+        <table>
+            <td>
+                Franquicia:
+            </td>
+            <td>
+                <input type="radio" name="franquicia" value="ninguna" checked="" />ninguna<br/>
+                <input type="radio" name="franquicia" value="500" />500<br/>
+                <input type="radio" name="franquicia" value="1000" />1000<br/>
+            </td>
+        </table>
+            <input type="hidden" name="opcion" value="2"/>
+        <input type="submit" name="envCon" value="Enviar" ></input>
+    </form>
+        </fieldset>
+    <div id="copyright">Victor Ruiz Sanchez S.L Since 2017</div>
+    </jsp:body>
+</jsp:root>
